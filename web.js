@@ -13,6 +13,8 @@ var cmd = 'python3 classify_image.py --image_file image.jpg';
     exec(cmd, function(error, stdout, stderr) {
         res.end(stdout);
         console.log(stdout);
+        console.log(error);
+        console.log(stderr);
     });
 });
 
