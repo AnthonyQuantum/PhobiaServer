@@ -17,5 +17,5 @@ var cmd = 'python3 classify_image.py --image_file image.jpg';
 });
 
 app.listen(process.env.PORT, function() {
-    console.log("Server running on " + process.env.PORT);
+    console.log("Server running");
 });
