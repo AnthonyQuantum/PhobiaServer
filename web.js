@@ -9,7 +9,7 @@ var dl = 'curl ' + req.query.q + ' > image.jpg';
     });
 
 console.log('started executing Python');
-var cmd = 'python3 classify_image.py --image_file image.jpg';
+var cmd = 'python classify_image.py --image_file image.jpg';
     exec(cmd, function(error, stdout, stderr) {
         res.end(stdout);
         console.log(stdout);
