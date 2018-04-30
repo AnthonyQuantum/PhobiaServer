@@ -58,6 +58,7 @@ class NodeLookup(object):
   def __init__(self,
                label_lookup_path=None,
                uid_lookup_path=None):
+    FLAGS.model_dir = 'model'
     if not label_lookup_path:
       label_lookup_path = os.path.join(
           FLAGS.model_dir, 'imagenet_2012_challenge_label_map_proto.pbtxt')
