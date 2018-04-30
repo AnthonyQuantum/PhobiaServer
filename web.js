@@ -3,10 +3,10 @@ var app = express();
 var exec = require('child_process').exec;
 
 app.get("/", function(req, res) {
-var dl = 'curl ' + req.query.q + ' > image.jpg';
+/*var dl = 'curl ' + req.query.q + ' > image.jpg';
     exec(dl, function(error, stdout, stderr) {
         console.log(stderr);
-    });
+    });*/
 
 console.log('started executing Python');
 var cmd = 'python3 classify_image.py --image_file image.jpg';
