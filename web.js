@@ -18,5 +18,5 @@ classify_image.py \
 });
 
 app.listen(process.env.PORT, function() {
-    console.log("server running on " + process.env.PORT);
+    console.log("Server running on " + process.env.PORT);
 });
