@@ -15,7 +15,6 @@ var cmd = 'python3 classify_image.py --image_file image.jpg';
         console.log(stdout);
         console.log(error);
         console.log(stderr);
-        console.log("Again: " + stdout[stdout.length]);
     });
 });
 
