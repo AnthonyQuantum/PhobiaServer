@@ -163,8 +163,8 @@ def run_inference_on_image(image):
     top_k = predictions.argsort()[-FLAGS.num_top_predictions:][::-1]
     for node_id in top_k:
       human_string = node_lookup.id_to_string(node_id)
-      score = predictions[node_id]
-      print('%s (score = %.5f)' % (human_string, score))
+      #score = predictions[node_id]
+      print(human_string)
 
 
 def maybe_download_and_extract():
@@ -176,9 +176,13 @@ def maybe_download_and_extract():
   filepath = os.path.join(dest_directory, filename)
   if not os.path.exists(filepath):
     def _progress(count, block_size, total_size):
+      #sys.stdout.write('\r>> Downloading %s %.1f%%' % (
+          #filename, float(count * block_size) / float(total_size) * 100.0))
       sys.stdout.flush()
     filepath, _ = urllib.request.urlretrieve(DATA_URL, filepath, _progress)
+    #print()
     statinfo = os.stat(filepath)
+    #print('Successfully downloaded', filename, statinfo.st_size, 'bytes.')
   tarfile.open(filepath, 'r:gz').extractall(dest_directory)
 
 
