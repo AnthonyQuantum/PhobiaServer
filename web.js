@@ -1,15 +1,18 @@
 var express = require("express");
 var app = express();
 var exec = require('child_process').exec;
-var base64Img = require('base64-img');
+//var base64Img = require('base64-img');
 
 app.get("/", function(req, res) {
-/*var dl = 'curl ' + req.query.q + ' > image.jpg';
-    exec(dl, function(error, stdout, stderr) {
-        console.log(stderr);
-    });*/
+    if (req.query.t == "absolute")
+    {
+        var dl = 'curl ' + req.query.q + ' > image.jpg';
+        exec(dl, function(error, stdout, stderr) {
+            console.log(stderr);
+        });
+    }
 
-var filepath = base64Img.imgSync(req.query.q, '', 'image.jpg');
+//var filepath = base64Img.imgSync(req.query.q, '', 'image');
 
 console.log('started executing Python');
 var cmd = 'python3 classify_image.py --image_file image.jpg';
