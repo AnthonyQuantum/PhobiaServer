@@ -3,6 +3,7 @@ var app = express();
 var exec = require('child_process').exec;
 var base64Img = require('base64-img');
 var bodyParser = require('body-parser');
+//var now = require("performance-now")
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -30,9 +31,12 @@ app.post("/", function(req, res) {
 });
 
 function executePython(res) {
+    //var a = now();
     console.log('started executing Python');
     var cmd = 'python3 classify_image.py --image_file image.jpg';
         exec(cmd, {maxBuffer: 1024 * 500}, function(error, stdout, stderr) {
+            //var b = now();
+            //stdout = stdout + "Working time: " + (b-a) + "ms";
             res.end(stdout);
             console.log(stdout);
             console.log(error);
