@@ -85,7 +85,7 @@ class NodeLookup(object):
     # Loads mapping from string UID to human-readable string
     proto_as_ascii_lines = tf.gfile.GFile(uid_lookup_path).readlines()
     uid_to_human = {}
-    p = re.compile(r'[n\d]*[ \S,]*')
+    p = re.compile(r'[n\d]*[ \S]*')
     for line in proto_as_ascii_lines:
       parsed_items = p.findall(line)
       uid = parsed_items[0]
