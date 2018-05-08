@@ -34,7 +34,7 @@ function executePython(res) {
     var a = now();
     console.log('started executing Python');
     var cmd = 'python3 classify_image.py --image_file image.jpg';
-        exec(cmd, {maxBuffer: 1024 * 500}, function(error, stdout, stderr) {
+        exec(cmd, {maxBuffer: 1024 * 1000}, function(error, stdout, stderr) {
             var b = now();
             stdout = stdout + "[Working time: " + (b-a) + "ms]";
             res.end(stdout);
