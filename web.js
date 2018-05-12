@@ -7,6 +7,7 @@ var now = require("performance-now")
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+app.use(express.static('images'))
 
 app.get("/", function(req, res) {
     if (req.query.t == "absolute" || req.query.t == "relative")
