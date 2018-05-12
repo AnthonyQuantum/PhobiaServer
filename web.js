@@ -3,11 +3,11 @@ var app = express();
 var exec = require('child_process').exec;
 var base64Img = require('base64-img');
 var bodyParser = require('body-parser');
-var now = require("performance-now")
+var now = require("performance-now");
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-app.use(express.static('images'))
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(express.static('images'));
 
 app.get("/", function(req, res) {
     if (req.query.t == "absolute" || req.query.t == "relative")
