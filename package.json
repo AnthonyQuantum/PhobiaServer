@@ -1,0 +1,23 @@
+{
+  "name": "inceptionserver",
+  "version": "1.0.0",
+  "description": "### Node.js API for Google Tensorflow Inception Model",
+  "main": "web.js",
+  "scripts": {
+    "test": "mocha || true",
+    "start": "node web.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "base64-img": "^1.0.4",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "perf_hooks": "0.0.1",
+    "performance-now": "^2.1.0"
+  },
+  "engines": {
+    "node": "9.8.0"
+  },
+  "devDependencies": {}
+}
