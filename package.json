@@ -4,7 +4,7 @@
   "description": "### Node.js API for Google Tensorflow Inception Model",
   "main": "web.js",
   "scripts": {
-    "test": "mocha || true",
+    "test": "mocha || true --env=jsdom --coverage --collectCoverageFrom=src/**/*js --collectCoverageFrom=!src/registerServiceWorker.js",
     "start": "node web.js"
   },
   "author": "",
@@ -21,6 +21,8 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "codecov.io": "^0.1.6",
+    "coveralls": "^3.0.2"
   }
 }
