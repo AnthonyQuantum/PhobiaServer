@@ -10,5 +10,17 @@ services:
 after_success:
   - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
 
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: $ACCESSKEYID
+  secret_access_key:
+    secure: "$SECRETACCESSKEY"
+  region: "us-east-2"  
+  app: "aq-phobia"
+  env: "aq-phobia-env"
+  bucket_name: "elasticbeanstalk-us-east-2-882371129764"
+  on:
+    branch: master
+
 after_deploy:
   - echo "Done deploying!"
