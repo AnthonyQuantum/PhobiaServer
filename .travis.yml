@@ -7,8 +7,8 @@ node_js:
 services:
   - docker
 
-script:
-  - npm test
-
 after_success:
   - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
+
+after_deploy:
+  - echo "Done deploying!"
