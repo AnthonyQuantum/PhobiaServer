@@ -7,8 +7,5 @@ node_js:
 services:
   - docker
 
-before_install:
-  - npm test
-
 script:
-  - node web.js
+  - npm test
