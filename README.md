@@ -1,5 +1,4 @@
 # Phobia (server side)
-[![Travis][build-badge]][build]
 
 Phobia application will make your web browsing more comfortable by blocking images that contain something you are afraid of.
 
