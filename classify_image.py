@@ -178,12 +178,12 @@ def run_inference_on_image(image):
 def main(_):
   startTotal = time.time()
 
-  image = FLAGS.image_file
+  image = sys.argv[1]
   run_inference_on_image(image)
 
   endTotal = time.time()
-  print("Total time: " + str(Decimal(endTotal - startTotal).quantize(Decimal('1.0'))) + " sec")
-
+  print("\n[Classification time (Python only): " + str(Decimal(endTotal - startTotal).quantize(Decimal('1.0'))*1000) + " ms]")
+  sys.stdout.flush()
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser()
